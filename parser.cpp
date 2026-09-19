@@ -6,25 +6,53 @@ using namespace std;
 
 using Matrix = vector<vector<int>>;
 
+Matrix parseQC(const std::string& filename) 
+{
+    std::ifstream file(filename);
+
+    int z, n, m;
+    file >> z >> n >> m;
+
+    Matrix H(m * z, std::vector<int>(n * z, 0));
+
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            int shift;
+            file >> shift;
+            if (shift != -1) 
+            {
+                for (int k = 0; k < z; k++) 
+                {
+                    int col = (k + shift) % z;
+                    H[i * z + k][j * z + col] = 1;
+                }
+            }
+        }
+    }
+    return H;
+}
+
 Matrix parseAlist(const string& filename) 
 {
     ifstream file(filename);
 
-    int N, M, max_col_deg, max_row_deg;
-    file >> N >> M;
+    int n, m, max_col_deg, max_row_deg;
+    file >> n >> m;
     file >> max_col_deg >> max_row_deg;
 
-    vector<int> col_weights(N);
-    for (int i = 0; i < N; ++i) 
+    vector<int> col_weights(n);
+    for (int i = 0; i < n; ++i) 
         file >> col_weights[i];
 
-    vector<int> row_weights(M);
-    for (int i = 0; i < M; ++i) 
+    vector<int> row_weights(m);
+    for (int i = 0; i < m; ++i) 
         file >> row_weights[i];
 
-    Matrix H(M, vector<int>(N, 0));
+    Matrix H(m, vector<int>(n, 0));
 
-    for (int j = 0; j < N; j++) 
+    for (int j = 0; j < n; j++) 
     {
         for (int k = 0; k < max_col_deg; k++) 
         {
@@ -50,7 +78,7 @@ void saveMatrix(const Matrix& H, const string& filename)
 
 int main()
 {
-    Matrix H_alist = parseAlist("matrix.alist");
+    Matrix H_alist = parseQC("matrix.qc");
     saveMatrix(H_alist, "matrix.txt");
 
     return 0;

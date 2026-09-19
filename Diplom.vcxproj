@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="matrix.alist" />
+    <None Include="matrix.qc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="matrix.txt" />

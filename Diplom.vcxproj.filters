@@ -23,6 +23,9 @@
     <None Include="matrix.alist">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="matrix.qc">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="matrix.txt">
