@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/aff3ct_install
+/Diplom.vcxproj
+*.txt
+/matrix_systematic.alist
