@@ -18,6 +18,15 @@
     <ClCompile Include="parser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="dataset.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="experiments.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="matrix.alist">
@@ -31,5 +40,25 @@
     <Text Include="matrix.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
+    <Text Include="code_info.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="nms_check.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="nms_curve.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dataset.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="experiments.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

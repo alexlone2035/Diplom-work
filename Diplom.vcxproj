@@ -108,13 +108,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOMINMAX</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\cli;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\date;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\json;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\rang;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\MIPP;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\streampu;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\aff3ct;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)aff3ct_install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>aff3ct-4.7.1-2-g406cb65.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -126,19 +129,25 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOMINMAX</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\cli;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\date;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\json;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\rang;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\MIPP;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\streampu;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65\aff3ct;$(ProjectDir)aff3ct_install\include\aff3ct-4.7.1-2-g406cb65;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)aff3ct_install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>aff3ct-4.7.1-2-g406cb65.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dataset.cpp" />
+    <ClCompile Include="experiments.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="parser.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +155,15 @@
     <None Include="matrix.qc" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="code_info.txt" />
     <Text Include="matrix.txt" />
+    <Text Include="nms_check.txt" />
+    <Text Include="nms_curve.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dataset.h" />
+    <ClInclude Include="experiments.h" />
+    <ClInclude Include="parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
